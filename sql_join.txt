@@ -1,0 +1,18 @@
+SELECT r.*, s.name as sex_name, c.name as country_name, e.name as education_level_name, ms.name as marital_status_name, o.name as occupation_name, races.name as race_name, rp.name as relationship_name, wc.name as workclass_name
+FROM records r
+INNER JOIN sexes s
+ON r.sex_id=s.id
+INNER JOIN countries c
+ON r.country_id = c.id
+INNER JOIN education_levels e
+ON r.education_level_id = e.id
+INNER JOIN marital_statuses ms
+ON r.marital_status_id = ms.id
+INNER JOIN occupations o
+ON r.occupation_id = o.id
+INNER JOIN races 
+ON r.race_id = races.id
+INNER JOIN relationships rp
+ON r.relationship_id = rp.id
+INNER JOIN workclasses wc
+ON r.workclass_id = wc.id
